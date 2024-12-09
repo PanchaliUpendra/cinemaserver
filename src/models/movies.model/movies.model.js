@@ -36,7 +36,22 @@ async function getMovieModel(){
     }
 }
 
+async function getEachmovieModel(movieid){
+    try{
+        const movieresponse = await moviedatabase.findOne({movieuid:movieid});
+        if(movieresponse){
+            return {success:true, message:'successfully fetched', movie:movieresponse};
+        }else{
+            return {success:false, message:'getting an error while fetching'};
+        }
+    }catch(err){
+        console.log('getting an error while fetching the movie data ',err);
+        return {success:false, message:'getting an error while fetching movie data'};
+    }
+}
+
 module.exports ={
     addMovieModel,
-    getMovieModel
+    getMovieModel,
+    getEachmovieModel
 }

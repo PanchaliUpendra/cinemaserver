@@ -1,4 +1,4 @@
-const {addMovieModel, getMovieModel} = require('../../models/movies.model/movies.model');
+const {addMovieModel, getMovieModel, getEachmovieModel} = require('../../models/movies.model/movies.model');
 
 async function addMovieController(req,res){
     try{
@@ -28,7 +28,22 @@ async function getMovieController(req,res){
     }
 }
 
+async function getEachmovieController(req,res){
+    try{
+        const result = await getEachmovieModel(req.params.movieid);
+        if(result.success){
+            return res.status(201).json(result);
+        }else{
+            return res.json(result);
+        }
+    }catch(err){
+        console.log('getting an erorr while fetching the each movie ',err);
+        return {success:false, message:'getting an error while fetchingf the each movie data'};
+    }
+}
+
 module.exports ={
     addMovieController,
-    getMovieController
+    getMovieController,
+    getEachmovieController
 }
