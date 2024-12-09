@@ -14,7 +14,9 @@ const bookingsSchema = new mongoose.Schema({
     endtime:String,
     moviedes:String,
     moviedur:Number,
-    movietype:String
+    movietype:String,
+    useremail:String,
+    username:String
 });
 
 const bookingsdatabase = mongoose.model('bookings',bookingsSchema);

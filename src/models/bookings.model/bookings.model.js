@@ -18,7 +18,9 @@ async function addNewTicketModel(tktData){
             endtime:tktData.endtime,
             moviedes:tktData.moviedes,
             moviedur:tktData.moviedur,
-            movietype:tktData.movietype
+            movietype:tktData.movietype,
+            useremail:tktData.useremail,
+            username:tktData.username
         });
         if(tktres){
             return {success:true, message:'The movie tickets have been successfully booked'};

@@ -1,4 +1,4 @@
-const { addNewTicketModel, getEachUserBookingsModel } = require("../../models/bookings.model/bookings.model")
+const { addNewTicketModel, getEachUserBookingsModel , getAllBookingsModel} = require("../../models/bookings.model/bookings.model")
 
 async function addNewTicketController(req,res){
     try{
