@@ -3,6 +3,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const theaterRouter = require('./routers/theaters/theaters.router');
 const usersRouter = require('./routers/users/users.router');
+const moviesRouter = require('./routers/movies/movies.router');
 
 const app = express();
 
@@ -24,5 +25,6 @@ app.use(cookieParser());
 
 app.use('/theater',theaterRouter);
 app.use('/users',usersRouter);
+app.use('/movies',moviesRouter);
 
 module.exports = app;
